@@ -115,8 +115,8 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             file_url = url_for('uploaded_file', filename=filename)
-            return "https://github.com/WenlinG28/Encryption-Image/blob/master/website.html" + '<br><img src=' + file_url + '>'
-    return "https://github.com/WenlinG28/Encryption-Image/blob/master/website.html"
+            return html + '<br><img src=' + file_url + '>'
+    return html
 
 @app.route('/uploads/<filename>', methods=['GET', 'POST'])
 def download(filename):
