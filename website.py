@@ -114,8 +114,8 @@ def upload_file():
             filename = secure_filename(file.filename)
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             file_url = url_for('uploaded_file', filename=filename)
-            return "homepage.html" + '<br><img src=' + file_url + '>'
-    return "homepage.html"
+            return 'homepage.html' + '<br><img src=' + file_url + '>'
+    return 'homepage.html'
 
 @app.route('/uploads/<filename>', methods=['GET', 'POST'])
 def download(filename):
